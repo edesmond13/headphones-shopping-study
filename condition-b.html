@@ -1,0 +1,97 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Headphones Shopping Experience — Condition B</title><style>body{margin:0;padding:20px 8px 50px;background:#f6f7fa;display:flex;flex-direction:column;align-items:center;font-family:Arial,sans-serif} .hint{max-width:390px;font-size:14px;line-height:1.5;margin:0 0 12px;color:#444} .end{margin:20px 0 0;max-width:390px;font-size:13px;color:#555;text-align:center} @media(max-width:420px){body{padding:8px 0 30px}#abA,#abB{border-radius:0!important}}</style></head><body><p class="hint">Explore the product page as you normally would. This is a simulated purchase; no payment will be collected.</p>==========================================================================
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+#abB, #abB * { box-sizing: border-box; }
+#abB { position: relative; width: 390px; max-width: 100%; height: 780px; margin: 0 auto; overflow: hidden;
+  background: #ececef; color: #15161c; font-family: Poppins, Arial, sans-serif; text-align: left;
+  border-radius: 32px; box-shadow: 0 10px 40px rgba(0,0,0,0.15); line-height: 1.4; }
+#abB .hdr { background: #0a1352; padding: 24px 20px 16px; display: flex; align-items: center; gap: 12px; }
+#abB .search { flex: 1; display: flex; align-items: center; gap: 8px; height: 40px; padding: 0 12px;
+  border-radius: 6px; background: rgba(255,255,255,0.14); color: #c4c8e0; font-size: 15px; }
+#abB .menu { color: #fff; display: flex; }
+#abB svg { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+#abB .body { padding: 32px 40px 0; }
+#abB .photo-wrap { position: relative; }
+#abB .photo { display: block; width: 100%; height: 340px; object-fit: cover; border-radius: 6px;
+  box-shadow: 0 18px 30px rgba(20,22,40,0.22); }
+#abB button { font-family: inherit; cursor: pointer; }
+#abB .cart { position: absolute; right: -24px; bottom: -32px; width: 84px; height: 84px; border-radius: 50%;
+  border: 4px solid #ececef; background: #0a1352; color: #fff; display: flex; align-items: center;
+  justify-content: center; box-shadow: 0 10px 22px rgba(10,19,82,0.35); padding: 0; }
+#abB .badge { position: absolute; right: -26px; bottom: 34px; min-width: 26px; height: 26px; padding: 0 6px;
+  border-radius: 13px; background: #f59e0b; color: #15161c; font-size: 13px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center; border: 2px solid #ececef; }
+#abB h1 { margin: 28px 0 0; font-size: 22px; font-weight: 600; color: #15161c; }
+#abB .price { margin: 6px 0 0; font-size: 24px; font-weight: 600; text-align: right; }
+#abB ul { margin: 28px 0 0; padding: 0; list-style: none; font-size: 13px; color: #3a3c48; }
+#abB li { margin-bottom: 8px; }
+#abB .toast { position: absolute; left: 16px; right: 16px; bottom: 24px; background: #15161c; color: #fff;
+  border-radius: 14px; padding: 12px 12px 12px 16px; display: flex; align-items: center; gap: 12px;
+  box-shadow: 0 14px 30px rgba(0,0,0,0.28); }
+#abB .thumb { width: 44px; height: 44px; object-fit: cover; border-radius: 8px; }
+#abB .grow { flex: 1; }
+#abB .toast-sub { font-size: 13px; color: #c9cbd6; }
+#abB .go { height: 44px; padding: 0 16px; border: 0; border-radius: 10px; background: #f59e0b;
+  color: #15161c; font-size: 14px; font-weight: 600; }
+#abB .done { position: absolute; inset: 0; background: #fff; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; text-align: center; padding: 40px; }
+#abB .check { width: 84px; height: 84px; border-radius: 50%; background: #0a1352; color: #fff;
+  display: flex; align-items: center; justify-content: center; }
+#abB .done h2 { margin: 22px 0 6px; font-size: 24px; font-weight: 600; color: #15161c; }
+#abB .muted { color: #5a5d6b; }
+#abB .outline { margin-top: 22px; height: 50px; padding: 0 28px; border: 1.5px solid #0a1352;
+  border-radius: 10px; background: #fff; color: #0a1352; font-size: 15px; font-weight: 600; }
+#abB .is-hidden { display: none !important; }
+</style>
+
+<!-- CONDITION B: Cart icon -->
+<div id="abB">
+  <div class="hdr">
+    <div class="search">
+      <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg>
+      <span>Search</span>
+    </div>
+    <span class="menu" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></span>
+  </div>
+
+  <div class="body">
+    <div class="photo-wrap">
+      <img class="photo" src="headphones.jpg" alt="Orange on-ear headphones">
+      <button type="button" class="cart" id="abB-cart" aria-label="Add to cart">
+        <svg width="38" height="38" viewBox="0 0 24 24"><path d="M3 4h2.2l2.3 10.5h10.3L20 7.5H7"></path><path d="M8.5 9.5h10M9.2 12h8.3"></path><circle cx="9.5" cy="18.5" r="1.4"></circle><circle cx="16.5" cy="18.5" r="1.4"></circle></svg>
+      </button>
+      <span class="badge is-hidden" id="abB-badge">0</span>
+    </div>
+    <h1>Headphones</h1>
+    <p class="price">$189</p>
+    <ul>
+      <li>– Up to 16 hour battery life</li>
+      <li>– Two hour recharge time for full battery life</li>
+      <li>– One button universal remote</li>
+      <li>– Controls music and call functions</li>
+      <li>– Fabric headband designed for extra comfort</li>
+    </ul>
+  </div>
+
+  <div class="toast is-hidden" id="abB-toast" role="status">
+    <img class="thumb" src="headphones.jpg" alt="">
+    <div class="grow">
+      <div style="font-size:14px;font-weight:600;">Added to cart</div>
+      <div class="toast-sub" id="abB-line">1 item · $189</div>
+    </div>
+    <button type="button" class="go" id="abB-checkout">Checkout</button>
+  </div>
+
+  <div class="done is-hidden" id="abB-done">
+    <div class="check"><svg width="40" height="40" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></div>
+    <h2>Order placed</h2>
+    <p class="muted" id="abB-summary" style="font-size:15px;margin:0;"></p>
+    <button type="button" class="outline" id="abB-reset">Back to product</button>
+  </div>
+</div>
+
+
+==========================================================================<p class="end">When you have finished exploring, return to your survey tab to continue.</p><script>
+window.Qualtrics={SurveyEngine:{addOnload:function(fn){},addOnReady:function(fn){document.addEventListener('DOMContentLoaded',function(){fn.call({getQuestionContainer:function(){return document;}});});},addOnUnload:function(fn){},setEmbeddedData:function(key,value){try{window.parent.postMessage({type:'headphones-study-data',key:key,value:String(value)},'*');}catch(e){} }}};
+</script><script src="condition-b.js"></script></body></html>

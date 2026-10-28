@@ -1,0 +1,35 @@
+HEADPHONES GITHUB PAGES + QUALTRICS SETUP
+
+1. Create a NEW PUBLIC GitHub repository, e.g. headphones-shopping-study.
+2. Upload all files in this folder to the repository ROOT (index.html, condition-a.html, condition-b.html, condition-a.js, condition-b.js, headphones.jpg).
+3. Settings > Pages > Deploy from a branch > main / (root) > Save. Wait for GitHub Pages deployment.
+4. Your site URL will resemble https://YOUR_USERNAME.github.io/headphones-shopping-study/
+5. Test both: https://YOUR_USERNAME.github.io/headphones-shopping-study/?condition=A and ?condition=B.
+
+QUALTRICS: Two blocks, each with a Text/Graphic question and a randomized one-of-two block flow.
+A) In Survey Flow create Embedded Data fields before the randomizer: condition, ctaClicks, quantity, checkout, msToFirstClick, msToCheckout, abandonClicks.
+B) Add a Randomizer, present 1 of 2 blocks evenly. Each block gets one Text/Graphic question.
+C) In the HTML view of the Condition A question, paste:
+<iframe title="Headphones shopping experience" src="https://YOUR_USERNAME.github.io/headphones-shopping-study/?condition=A" style="width:100%;max-width:450px;height:920px;border:0;display:block;margin:auto" loading="eager"></iframe>
+D) For Condition B, use the same HTML but change condition=A to condition=B.
+E) In the JavaScript editor of BOTH Qualtrics questions, paste the code below, replacing YOUR_USERNAME and repository name in the origin only if you used a custom domain:
+
+Qualtrics.SurveyEngine.addOnReady(function(){
+  var question=this;
+  var frame=question.getQuestionContainer().querySelector('iframe');
+  if(!frame)return;
+  var allowedOrigin='https://YOUR_USERNAME.github.io';
+  var fields=['condition','ctaClicks','quantity','checkout','msToFirstClick','msToCheckout','abandonClicks'];
+  function receive(event){
+    if(event.origin!==allowedOrigin || event.source!==frame.contentWindow)return;
+    var d=event.data;
+    if(!d || d.type!=='headphones-study-data' || fields.indexOf(d.key)===-1)return;
+    Qualtrics.SurveyEngine.setEmbeddedData(d.key,String(d.value));
+  }
+  window.addEventListener('message',receive);
+  question.addOnUnload(function(){window.removeEventListener('message',receive);});
+});
+
+IMPORTANT: This method embeds the website INSIDE Qualtrics so postMessage can record data. Opening the site in a separate tab without this bridge will NOT record the behavior in Qualtrics. Preview both conditions and test recorded data with actual survey submissions before launch. 'Order placed' is a simulated confirmation only. Some Qualtrics account settings may restrict iframe embedding or JavaScript; verify on your account.
+
+NOTE ON EXPERIMENTAL CONTROL: Conditions A and B also differ in feature counts and price alignment, not just the CTA. If you are isolating CTA effects, equalize those elements before collecting data.
